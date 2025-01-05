@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(to bottom right, rgba(249, 250, 252, 0.8), #72ada4); /* Soft blue gradient */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            color: #fff;
+            text-align: center;
+        }
+
+        .content {
+            max-width: 800px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.6); /* Slightly darker transparent background */
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            padding: 15px 30px;
+            background: #34495e;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .buttons a:hover {
+            background: #f39c12;
+            transform: scale(1.1);
+        }
+
+        /* The Image Preview Modal (Hidden by default) */
+        #imgPreviewModal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #imgPreviewModal:checked + .modalContent {
+            display: flex;
+        }
+
+        .modalContent {
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modalContent img {
+            width: 80%;
+            max-width: 700px;
+            height: auto;
+        }
+
+        .modalContent label {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+
+        footer a img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        footer a img:hover {
+            transform: scale(1.2);
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .copyright {
+            background-color: #2c3e50; /* Dark background for the copyright section */
+            color: #fff;
+            padding: 10px 0; /* Slightly increased padding */
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.9;
+            position:static;
+            bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome There!</h1>
+        <!-- Input element for image preview trigger -->
+        <input type="checkbox" id="imgPreviewModal" style="display:none;">
+        
+        <label for="imgPreviewModal">
+            <img src="image/hello.webp" alt="Dancing" style="width: 150px; height: auto; margin: 20px 0;">
+        </label>
+
+        <!-- Modal content that is displayed when checkbox is checked -->
+        <div class="modalContent">
+            <label for="imgPreviewModal">×</label>
+            <img src="image/hello.webp" alt="Dancing">
+        </div>
+        <audio id="welcomeSound" src="audio/mixkit-hip-hop-02-738.mp3" preload="metadata"></audio> <!-- Add your audio file -->
+        <p>Hi, Aiman here! Welcome to my website where you can learn more about me and my passions. Explore the sections below to know more about myself,interst and experinces.</p>
+        <div class="buttons">
+            <a href="biodata.html">Biodata</a>
+            <a href="education.html">Education</a>
+            <a href="family.html">Family</a>
+            <a href="favourite.html">Favourite</a>
+            <a href="gallery.html">Gallery</a>
+        </div>
+    </div>
+
+    <footer>
+        <a href="https://www.youtube.com" target="_blank">
+            <img src="image/icon youtube.png" alt="YouTube">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="image/icon ig.jpg" alt="Instagram">
+        </a>
+        <a href="https://wa.me/+601111411524" target="_blank">
+            <img src="image/whatsapp icon.jpg" alt="WhatsApp">
+        </a>
+    </footer>
+
+    <div class="copyright">
+        <p>&copy; 2025 Aiman Hakim. All Rights Reserved.</p>
+    </div>
+
+</body>
+</html>

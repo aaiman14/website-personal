@@ -1,0 +1,21 @@
+body
+    {background-color: burlywood;}
+
+a:link
+    {
+        color: brown;
+        background-color: whitesmoke;
+        text-decoration: none;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 15px;
+    }
+
+a:hover
+    {
+        color: aquamarine;
+        background-color: tan;
+        text-decoration:underline;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+        padding: 15px;
+    }

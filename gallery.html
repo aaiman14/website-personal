@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Memorable Pictures</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: honeydew;
+      background-image: url('image/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: darkslategray;
+      text-align: center;
+    }
+
+    header {
+      background-color: #2c3e50;
+      padding: 20px;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      animation: neon 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes neon {
+      0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff;
+      }
+      50% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00ff00, 0 0 20px #00ff00, 0 0 25px #00ff00, 0 0 30px #00ff00;
+      }
+      100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00ffff, 0 0 20px #00ffff, 0 0 25px #00ffff, 0 0 30px #00ffff;
+      }
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .description-container {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: darkslategray;
+      text-align: center;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .lightbox img,
+    .lightbox video {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 2em;
+      text-decoration: none;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #2c3e50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      background-color: #D8BFD8;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9em;
+    }
+
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("image/blue-aesthetic-498-x-261-gif-cb9xzbglttp5x04y.webp"); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed when scrolling */
+    animation: fadeIn 1s ease-in-out;
+}
+
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>MEMORABLE PICTURES GALLERY</h1>
+    <p>✯My most memorable memories in the form of pictures✯</p>
+    <body>
+    
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <a href="#img1">
+            <img src="image/pho bad.jpg" alt="Memorable Picture 1">
+          </a>
+          <div class="description-container">
+            <p>Spending time with my friends playing badminton </p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <a href="#img2">
+            <img src="image/pho birth.jpg" alt="Memorable Picture 2">
+          </a>
+          <div class="description-container">
+            <p>Small birthday celebration with family</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <a href="#img3">
+            <img src="image/pho midf.jpg" alt="Memorable Picture 3">
+          </a>
+          <div class="description-container">
+            <p>Explourace activity with MIDF's staff during my Intenship </p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <a href="#img5">
+            <img src="image/pho art galerry.jpg" alt="Memorable Picture 5">
+          </a>
+          <div class="description-container">
+            <p>My first time visiting Art Gallery at Kuala Lumpur</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <a href="#video4">
+            <video src="image/vid pantai.MOV" poster="image/gallerypic4.jpg" controls width="100%" height="200px" alt="Memorable Video 4"></video>
+          </a>
+          <div class="description-container">
+            <p>Capture the sound and view of beach at Port Dickson</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <a href="#img6">
+            <img src="image/spm era.jpg" alt="Memorable Picture 6">
+          </a>
+          <div class="description-container">
+            <p>My old classmates when I was at secondary school </p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <a href="#img7">
+            <img src="image/808.jpg" alt="Memorable Picture 7">
+          </a>
+          <div class="description-container">
+            <p>My old housemates during sem 1</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <a href="#img8">
+            <div class="gallery-item">
+              <a href="#video4">
+                <video src="image/vid raya.MP4" poster="image/gallerypic4.jpg" controls width="100%" height="200px" alt="Memorable Video 4"></video>
+              </a>
+          <div class="description-container">
+            <p>Hari Raya Celebration with family </p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="lightbox" id="img1">
+        <a href="#" class="close-btn">&times;</a>
+        <img src="image/pho bad.jpg" alt="Memorable Picture 1">
+      </div>
+      <div class="lightbox" id="img2">
+        <a href="#" class="close-btn">&times;</a>
+        <img src="image/pho birth.jpg" alt="Memorable Picture 2">
+      </div>
+      <div class="lightbox" id="img3">
+        <a href="#" class="close-btn">&times;</a>
+        <img src="image/pho midf.jpg" alt="Memorable Picture 3">
+      </div>
+      <div class="lightbox" id="img5">
+        <a href="#" class="close-btn">&times;</a>
+        <img src="image/pho art galerry.jpg" alt="Memorable Picture 5">
+      </div>
+      <div class="lightbox" id="#video4">
+        <a href="#" class="close-btn">&times;</a>
+        <video src="image/vid pantai.MOV" poster="image/fam2.jpg" controls width="100%" height="200px" alt="Memorable Video 4"></video>
+      </div>
+      <div class="lightbox" id="img6">
+        <a href="#" class="close-btn">&times;</a>
+        <img src="image/spm era.jpg" alt="Memorable Picture 6">
+      </div>
+      <div class="lightbox" id="img7">
+        <a href="#" class="close-btn">&times;</a>
+        <img src="image/808.jpg" alt="Memorable Picture 7">
+      </div>
+      <div class="lightbox" id="img8">
+        <a href="#" class="close-btn">&times;</a>
+        <video src="image/vid raya.MP4" poster="image/gallerypic4.jpg" controls width="100%" height="200px" alt="Memorable Video 4"></video>      </div>
+  </header>
+
+  <div class="gallery-container">
+    <!-- Gallery items here -->
+  </div>
+
+  <a href="index .html" class="back-link">Back to Homepage</a>
+
+  <footer>
+    <p>&copy; 2025 Aiman Hakim. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
